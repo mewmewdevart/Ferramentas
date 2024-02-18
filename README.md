@@ -43,4 +43,10 @@ Um escopo é uma estrutura que pode ser adicionada após o tipo de commit para f
 - feat(auth): implementar autenticação de usuário
 
 
+## 🔗 References
+- [JavaScript Docs: Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Be a better developer with these Git good practices](https://dev.to/anthonyvii/be-a-better-developer-with-these-git-good-practices-2dim)
+
+
+
 <p align="center"> Desenvolvido com amor 💜 por Larissa Cristina Benedito (Mewmew/Larcrist). </p>
