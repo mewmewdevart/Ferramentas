@@ -1,0 +1,2055 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>SEO</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(50, 48, 44, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(115, 114, 110, 1);
+			fill: rgba(115, 114, 110, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(205, 60, 58, 1);
+			fill: rgba(205, 60, 58, 1);
+		}
+
+		.highlight-default_background {
+			color: rgba(50, 48, 44, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(248, 248, 247, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(248, 243, 252, 1);
+		}
+
+		.highlight-pink_background {
+			background: rgba(252, 241, 246, 1);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(115, 114, 110, 1);
+			fill: rgba(115, 114, 110, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(205, 60, 58, 1);
+			fill: rgba(205, 60, 58, 1);
+		}
+
+		.block-color-default_background {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray_background {
+			background: rgba(248, 248, 247, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(248, 243, 252, 1);
+		}
+
+		.block-color-pink_background {
+			background: rgba(252, 241, 246, 1);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-default {
+			background-color: rgba(84, 72, 49, 0.08);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(84, 72, 49, 0.15);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(210, 162, 141, 0.35);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(224, 124, 57, 0.27);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(236, 191, 66, 0.39);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(123, 183, 129, 0.27);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(93, 165, 206, 0.27);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(168, 129, 197, 0.27);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(225, 136, 179, 0.27);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(244, 171, 159, 0.4);
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="16345bfd-2d22-8114-8a11-e58683d4aa33" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><img class="icon"
+					src="SEO%2016345bfd2d2281148a11e58683d4aa33/google.png" /></div>
+			<h1 class="page-title">SEO</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<p id="16345bfd-2d22-81f9-9c5c-c2a86bc65768" class="">
+			</p>
+			<p id="16345bfd-2d22-8178-80a2-d7eb7e2adfdc" class=""><strong>Aprofundamento em SEO</strong></p>
+			<ul id="16345bfd-2d22-813d-bcf7-c1810c4b2abf" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>A influência do Google</strong></summary>
+						<p id="16345bfd-2d22-813f-8253-c4ce1f9b67d4" class=""><strong>Por quê usamos o Google como
+								referencia?</strong></p>
+						<p id="16345bfd-2d22-81f9-a1b6-f6f937d326fe" class=""> Google é o motor de busca mais utilizado
+							no mundo, com uma participação de mercado superior a 90% em muitos países. Isso o torna um
+							padrão global para buscas na internet.</p>
+						<p id="16345bfd-2d22-8105-befb-c4fec687eae5" class="">
+						</p>
+						<p id="16345bfd-2d22-810f-9c1c-f58e51673a34" class=""><strong>Missão do Google:</strong></p>
+						<p id="16345bfd-2d22-815b-bf12-c4e22b51d926" class="">Organizar as informações do mundo e
+							torná-las acessiveis e uteis para todos.</p>
+						<p id="16345bfd-2d22-818a-ab55-c1c8806bd493" class="">
+						</p>
+						<p id="16345bfd-2d22-81bc-88b5-de36957a60e7" class=""><strong>Como o Google funciona:</strong>
+						</p>
+						<p id="16345bfd-2d22-81c2-9908-f7c5d1588cdb" class="">O Google utiliza um programa chamado
+							&quot;spider&quot; (ou rastreador), que navega pela internet e acessa diferentes páginas
+							web. Esse rastreador examina o conteúdo das páginas, segue links e indexa as informações
+							coletadas, permitindo que o Google organize e exiba resultados de pesquisa de forma
+							eficiente.</p>
+						<p id="16345bfd-2d22-81d0-9d4b-c137d1690808" class="">
+						</p>
+						<p id="16345bfd-2d22-811a-8c96-d2e93616b5be" class=""><strong>Fatores de ranqueamento
+								confirmados pelo google:</strong></p>
+						<ul id="16345bfd-2d22-8162-9709-d32aedb72ebc" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Conteúdo único e de alta acessibilidade</strong>:
+								Oferecer conteúdo original, relevante e acessível é essencial para melhorar a
+								experiência do usuário e o ranqueamento.<mark class="highlight-purple">(Top 3
+									relevancia)</mark></li>
+						</ul>
+						<ul id="16345bfd-2d22-8172-bb22-e44cfdccbd59" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Links</strong>: A qualidade e a quantidade de links
+								internos e externos influenciam a autoridade e relevância de uma página.<mark
+									class="highlight-purple"> (Top 3 relevancia)</mark></li>
+						</ul>
+						<ul id="16345bfd-2d22-81ed-a47b-d9c3c5ca7fa3" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>RankBrain</strong>: Algoritmo de inteligência
+								artificial que ajuda a interpretar as consultas de busca, entendendo melhor a intenção
+								do usuário.<mark class="highlight-purple">(Top 3 relevancia)</mark></li>
+						</ul>
+						<ul id="16345bfd-2d22-81c6-9107-d3d4e357ceee" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>HTTPS (Google, 2014)</strong>: Sites que utilizam o
+								protocolo seguro HTTPS têm preferência em relação à segurança e confiança.</li>
+						</ul>
+						<ul id="16345bfd-2d22-8109-ac7d-ec9248658cbe" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Velocidade de carregamento (Google, 2010)</strong>:
+								Páginas que carregam mais rapidamente proporcionam uma melhor experiência ao usuário e
+								são favorecidas no ranqueamento.</li>
+						</ul>
+						<ul id="16345bfd-2d22-8172-80e1-c31434b1fc0d" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Title Tag (John Mueller, 2016)</strong>: O título
+								da página continua sendo um dos fatores on-page mais importantes para o SEO, ajudando a
+								identificar o conteúdo.</li>
+						</ul>
+						<ul id="16345bfd-2d22-810c-8314-c729921d0685" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Mobile-friendly (Mobile First Index)</strong>:
+								Sites otimizados para dispositivos móveis são priorizados devido à predominância de
+								acessos via smartphones.</li>
+						</ul>
+						<ul id="16345bfd-2d22-812a-8b34-e203aa3573e5" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>PageRank</strong>: Mede a importância de uma página
+								com base no número e na qualidade dos links recebidos.</li>
+						</ul>
+						<ul id="16345bfd-2d22-8156-8b97-f3293a741572" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Autoridade do site (John Mueller, 2016)</strong>:
+								Refere-se à credibilidade do site, determinada pela qualidade do conteúdo, backlinks e
+								outros fatores.</li>
+						</ul>
+						<ul id="16345bfd-2d22-8121-96aa-f68cc38630b9" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Texto âncora</strong>: O texto usado nos links
+								ajuda a definir o contexto e a relevância do link para o conteúdo da página de destino.
+							</li>
+						</ul>
+						<ul id="16345bfd-2d22-81c8-b2ef-e38cdac7d0c5" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Localização</strong>: A geolocalização do usuário e
+								do negócio influencia os resultados, principalmente para buscas locais, priorizando
+								resultados mais próximos ao usuário.</li>
+						</ul>
+						<p id="16345bfd-2d22-81bb-8a42-e205adb59120" class="">
+						</p>
+						<p id="16345bfd-2d22-81e5-8f64-e96977efa16b" class=""><strong>Ferramentas do Google</strong>
+							para otimização e análise de sites:</p>
+						<ol type="1" id="16345bfd-2d22-818d-ad23-f5b328a30a1e" class="numbered-list" start="1">
+							<li><strong>Google Analytics</strong>: Ferramenta de análise que oferece insights detalhados
+								sobre o tráfego do site, comportamento dos usuários, fontes de tráfego e conversões,
+								ajudando a tomar decisões baseadas em dados.</li>
+						</ol>
+						<ol type="1" id="16345bfd-2d22-81af-85f8-fee1d14e20f0" class="numbered-list" start="2">
+							<li><strong>Google Search Console</strong>: Ferramenta que permite monitorar o desempenho do
+								site nos resultados de busca, identificar erros de indexação, verificar backlinks,
+								enviar sitemaps e ver palavras-chave que trazem tráfego.</li>
+						</ol>
+						<ol type="1" id="16345bfd-2d22-8187-acf6-d3d2aae446ef" class="numbered-list" start="3">
+							<li><strong>Google Optimize</strong>: Ferramenta de teste A/B que ajuda a realizar
+								experimentos em sites para melhorar a experiência do usuário e otimizar conversões.</li>
+						</ol>
+						<ol type="1" id="16345bfd-2d22-81fe-89f9-e6032200efa1" class="numbered-list" start="4">
+							<li><strong>Google Lighthouse e PageSpeed Insights</strong>: Ferramentas para avaliar o
+								desempenho de um site, com foco em velocidade de carregamento, acessibilidade, boas
+								práticas de SEO e experiência do usuário. O Lighthouse oferece uma auditoria completa,
+								enquanto o PageSpeed Insights se concentra em otimização de velocidade.</li>
+						</ol>
+						<ol type="1" id="16345bfd-2d22-81ec-b1da-f49f6aad5ff5" class="numbered-list" start="5">
+							<li><strong>Ferramenta de Dados Estruturados (Rich Results Test)</strong>: Valida a
+								implementação de dados estruturados no site (esquemas de markup como JSON-LD), ajudando
+								a garantir que o site esteja otimizado para rich snippets nos resultados de pesquisa.
+							</li>
+						</ol>
+						<p id="16345bfd-2d22-81ed-9ab7-e0db8bbe1287" class="">
+						</p>
+						<p id="16345bfd-2d22-8147-9267-c1c3799900dd" class="">📎 Google Algorithm Update History</p>
+						<p id="16345bfd-2d22-81ad-bf56-d96bb9ef87a9" class="">📎 SemRush Sensor<br />📎 Google WebMaster
+							Cnetral Blog<br /></p>
+						<p id="16345bfd-2d22-812a-864b-cf9925aca1e9" class="">
+						</p>
+					</details>
+				</li>
+			</ul>
+			<ul id="16345bfd-2d22-819f-8bbe-ccb4a4e11c9e" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>SEO On Page</strong></summary>
+						<p id="16345bfd-2d22-8137-a88c-ebb026e7c70b" class=""><mark
+								class="highlight-purple"><strong>Title, Description e URL</strong></mark></p>
+						<p id="16345bfd-2d22-816f-81cb-f6ead9a9788e" class=""><strong>O que o usuario vê ao
+								pesquisar:</strong></p>
+						<ul id="16345bfd-2d22-81cb-9978-e505f8ffa91d" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Title (Call to action)</strong>: Atraia o usuário
+								com um título envolvente, que descreva claramente o conteúdo e inclua palavras-chave
+								relevantes.<ul id="16345bfd-2d22-816e-a42c-d55e27f527d5" class="bulleted-list">
+									<li style="list-style-type:circle">Fator de ranqueamento</li>
+								</ul>
+								<ul id="16345bfd-2d22-813e-a682-e840ddf35fc1" class="bulleted-list">
+									<li style="list-style-type:circle">Impacta na taxa de cliques</li>
+								</ul>
+								<ul id="16345bfd-2d22-81c1-a025-de6977bd7c52" class="bulleted-list">
+									<li style="list-style-type:circle">Deve ter entre 50-60 caracteres (Moz)</li>
+								</ul>
+								<ul id="16345bfd-2d22-8176-a03c-eb024a638820" class="bulleted-list">
+									<li style="list-style-type:circle">Cada página deve ter o seu</li>
+								</ul>
+								<ul id="16345bfd-2d22-8155-90a4-fa09f3ce4ba8" class="bulleted-list">
+									<li style="list-style-type:circle">Deve conter a palavra-chave principal da pagina
+									</li>
+								</ul>
+								<ul id="16345bfd-2d22-81e9-8167-ee22f8255d8d" class="bulleted-list">
+									<li style="list-style-type:circle">Se possivel, incluir o nome da marca</li>
+								</ul>
+								<ul id="16345bfd-2d22-8125-a46d-cdac87db635e" class="bulleted-list">
+									<li style="list-style-type:circle">Exemplo:<ul
+											id="16345bfd-2d22-813a-9b77-eeda4e25403f" class="bulleted-list">
+											<li style="list-style-type:square">&lt;title&gt; Resultados Digitais -
+												Referencia em Marketing Digital de Resultados &lt;/title&gt;</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul id="16345bfd-2d22-816e-ad97-c6aaf6910138" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Meta Description</strong>: Resuma de forma clara e
+								objetiva o que o usuário pode esperar ao clicar no link. Use até 160 caracteres,
+								incluindo uma chamada para ação e palavras-chave estratégicas.<ul
+									id="16345bfd-2d22-81f0-b4ef-c65c9d81a356" class="bulleted-list">
+									<li style="list-style-type:circle">Impacta na taxa de cliques</li>
+								</ul>
+								<ul id="16345bfd-2d22-81bb-b0e1-c51b8e39cbf7" class="bulleted-list">
+									<li style="list-style-type:circle">Deve ter entre 50-160 caracteres (Moz)</li>
+								</ul>
+								<ul id="16345bfd-2d22-81ec-98d8-e295012c3e3b" class="bulleted-list">
+									<li style="list-style-type:circle">Incluir a palavra-chave principal e sinonimos
+									</li>
+								</ul>
+								<ul id="16345bfd-2d22-8126-ad60-cc4df6e4ac31" class="bulleted-list">
+									<li style="list-style-type:circle">Incluir uma chamada para ação</li>
+								</ul>
+								<ul id="16345bfd-2d22-81ea-aec8-e4d2f0f39a55" class="bulleted-list">
+									<li style="list-style-type:circle">É comum ser substituida por parte do contéudo
+									</li>
+								</ul>
+								<ul id="16345bfd-2d22-815c-8e33-e047cbe27cc4" class="bulleted-list">
+									<li style="list-style-type:circle">Exemplo:<ul
+											id="16345bfd-2d22-81af-9c3a-cec52d50505e" class="bulleted-list">
+											<li style="list-style-type:square">&lt;meta name=”description” content=”A
+												resultado digitais é referencia em marketing digital. Conheça o RD
+												Station e confira nossos conteudos gratuitos, cursos e eventos. Acesse
+												agora! /&gt;</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<ul id="16345bfd-2d22-81ef-b4d6-c8e86d9c6f28" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>URL</strong>: Mantenha a URL limpa, curta e
+								relevante, refletindo o conteúdo da página e facilitando a identificação do tema pelo
+								usuário e motores de busca.<p id="16345bfd-2d22-8107-900d-e12b604ea10d" class="">Voce
+									pode ter 3, 4 ou 5 palavras na sua URL. Conforme o numero for aumentando, ira
+									começar a ficar ruim.</p>
+								<ul id="16345bfd-2d22-8142-a918-d314db68518b" class="bulleted-list">
+									<li style="list-style-type:circle">Conter a palavra-chave principal</li>
+								</ul>
+								<ul id="16345bfd-2d22-8161-bc2a-caebe53a9f1d" class="bulleted-list">
+									<li style="list-style-type:circle">Usar traços no lugar de espaços</li>
+								</ul>
+								<ul id="16345bfd-2d22-8151-aa03-c8cb6e79e4ed" class="bulleted-list">
+									<li style="list-style-type:circle">Manter curta</li>
+								</ul>
+								<ul id="16345bfd-2d22-812e-8656-c204cfd67ef0" class="bulleted-list">
+									<li style="list-style-type:circle">Nao usar numeros e datas</li>
+								</ul>
+								<ul id="16345bfd-2d22-81f7-99ba-d09de86dfa56" class="bulleted-list">
+									<li style="list-style-type:circle">Exemplo:<ul
+											id="16345bfd-2d22-811c-b076-f5caf133dae2" class="bulleted-list">
+											<li style="list-style-type:square">
+												www.papodecinema.com.br/filmes/pulp-fiction<ul
+													id="16345bfd-2d22-81eb-82da-ff92031a7685" class="bulleted-list">
+													<li style="list-style-type:disc">Evite user datas e numeros.</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<figure id="16345bfd-2d22-8149-8c71-e25a305fe892" class="image"><a
+								href="SEO%2016345bfd2d2281148a11e58683d4aa33/39af5cca-6e8c-4090-8bbf-c47a1ac3ad41.png"><img
+									style="width:573px"
+									src="SEO%2016345bfd2d2281148a11e58683d4aa33/39af5cca-6e8c-4090-8bbf-c47a1ac3ad41.png" /></a>
+						</figure>
+						<p id="16345bfd-2d22-8181-b3ed-cb7737c1e363" class="">Observação: Cada pagina dentro do site,
+							deverá ter a sua propria Title Tag</p>
+						<p id="16345bfd-2d22-81a6-bfee-d84817359308" class=""><mark
+								class="highlight-purple"><strong>Otimização de Imagens:</strong></mark></p>
+						<ul id="16345bfd-2d22-8188-91d8-cc260b9013a5" class="bulleted-list">
+							<li style="list-style-type:disc">Produza suas imagens sempre que possível</li>
+						</ul>
+						<ul id="16345bfd-2d22-81e8-92a9-da11f3f903a4" class="bulleted-list">
+							<li style="list-style-type:disc">Nomeie o arquivo com sua palavra-chave<ul
+									id="16345bfd-2d22-818c-ba7f-f69a335cdbf9" class="bulleted-list">
+									<li style="list-style-type:circle">Exemplo: Marketing-Digital.png</li>
+								</ul>
+							</li>
+						</ul>
+						<ul id="16345bfd-2d22-8124-a7dc-c0dc1d0ceedc" class="bulleted-list">
+							<li style="list-style-type:disc">Use sempre um Alt Text curto e descritivo</li>
+						</ul>
+						<ul id="16345bfd-2d22-8157-9d96-c8beb721955f" class="bulleted-list">
+							<li style="list-style-type:disc">O melhor formato para imagens: JPG</li>
+						</ul>
+						<ul id="16345bfd-2d22-81d2-866e-e3683399389f" class="bulleted-list">
+							<li style="list-style-type:disc">Otimize as imagens :<ul
+									id="16345bfd-2d22-81aa-b3c4-c207c0d9267b" class="bulleted-list">
+									<li style="list-style-type:circle"><a
+											href="https://www.svgminify.com/">https://www.svgminify.com/</a></li>
+								</ul>
+								<ul id="16345bfd-2d22-811d-a526-e0503948b65c" class="bulleted-list">
+									<li style="list-style-type:circle"> <a
+											href="https://tinypng.com/">https://tinypng.com/</a></li>
+								</ul>
+							</li>
+						</ul>
+						<p id="16345bfd-2d22-81ce-9bec-d25840d101e2" class=""><mark
+								class="highlight-purple"><strong>Links Internos:</strong></mark> A sua pagina principal
+							deve apontar para os links internos do site
+						<div class="indented">
+							<ul id="16345bfd-2d22-8129-bfe4-cff67536ea18" class="bulleted-list">
+								<li style="list-style-type:disc">Inclua de forma natural no texto.</li>
+							</ul>
+							<ul id="16345bfd-2d22-8176-b7a3-c00539bc0f7d" class="bulleted-list">
+								<li style="list-style-type:disc">Dê preferência a linkar suas principais páginas.</li>
+							</ul>
+							<ul id="16345bfd-2d22-81e6-aefe-d6e5380fb43f" class="bulleted-list">
+								<li style="list-style-type:disc">Não use âncoras como &quot;Clique aqui&quot; e
+									&quot;Saiba mais&quot;.</li>
+							</ul>
+							<ul id="16345bfd-2d22-817d-8373-d95a5a49567d" class="bulleted-list">
+								<li style="list-style-type:disc">Use um texto âncora com a palavra-chave que represente
+									o conteúdo ao qual está direcionando.</li>
+							</ul>
+							<ul id="16345bfd-2d22-8163-9335-ca4be2754726" class="bulleted-list">
+								<li style="list-style-type:disc">Evite usar uma âncora com a mesma palavra-chave do
+									conteúdo que está sendo incluído.</li>
+							</ul>
+						</div>
+						</p>
+						<p id="16345bfd-2d22-81ea-ab43-d8dbfb956b0b" class=""><mark
+								class="highlight-purple"><strong>Conteudo e Semantica</strong></mark></p>
+						<p id="16345bfd-2d22-81fd-96bc-fa7683279d26" class="">Ao invés da quantidade de palavras, olhe
+							para:</p>
+						<ul id="16345bfd-2d22-815e-b314-d972793a0340" class="bulleted-list">
+							<li style="list-style-type:disc">Intenção de busca do usuário</li>
+						</ul>
+						<ul id="16345bfd-2d22-8144-a476-e201ef16b94d" class="bulleted-list">
+							<li style="list-style-type:disc">Responder todas as dúvidas</li>
+						</ul>
+						<ul id="16345bfd-2d22-8113-9662-cf95910b1003" class="bulleted-list">
+							<li style="list-style-type:disc">Proporcionar uma experiência incrivel</li>
+						</ul>
+						<ul id="16345bfd-2d22-812e-9a95-d2ee6e577994" class="bulleted-list">
+							<li style="list-style-type:disc">Conteudo multimidia</li>
+						</ul>
+						<ul id="16345bfd-2d22-8191-937f-fecfc60374e9" class="bulleted-list">
+							<li style="list-style-type:disc">Escaneabilidade do texto</li>
+						</ul>
+						<p id="16345bfd-2d22-81b8-9317-e291f74d04b0" class="">Analise a sua concorrência, tire todas as
+							dúvidas que o usuario tem relacionado a aquele assunto, explore a semantica no conteúdo</p>
+						<p id="16345bfd-2d22-81e8-bec5-e7056a679e0b" class=""><mark
+								class="highlight-purple"><strong>Featured Snippets</strong></mark></p>
+						<p id="16345bfd-2d22-8124-bcbe-e3295e110843" class="">Featured Snippets são blocos de
+							informações destacadas que aparecem no topo dos resultados orgânicos de busca no Google,
+							antes mesmo dos links tradicionais. </p>
+						<p id="16345bfd-2d22-817a-bf73-e7e5be4d34d5" class="">Do ponto de vista de SEO (Search Engine
+							Optimization), os Featured Snippets são altamente valiosos porque ocupam a chamada
+							&quot;posição zero&quot;, ou seja, o primeiro resultado na página, antes mesmo dos anúncios
+							e links orgânicos. Eles podem aparecer em diferentes formatos, como:</p>
+						<p id="16345bfd-2d22-8198-b474-e865d2bf61b1" class=""><strong>Parágrafos</strong>: Resumo de uma
+							resposta direta a uma pergunta.</p>
+						<figure id="16345bfd-2d22-81e7-a45d-e71054582ac4" class="image"><a
+								href="SEO%2016345bfd2d2281148a11e58683d4aa33/Screenshot_from_2024-10-22_11-47-29.png"><img
+									style="width:707.984375px"
+									src="SEO%2016345bfd2d2281148a11e58683d4aa33/Screenshot_from_2024-10-22_11-47-29.png" /></a>
+						</figure>
+						<p id="16345bfd-2d22-8113-ba7b-d6bfa59d7cab" class=""><strong>Listas</strong>: Numeradas ou com
+							marcadores, para guias ou instruções passo a passo.</p>
+						<figure id="16345bfd-2d22-8148-9d96-d7ddb9c606f4" class="image"><a
+								href="SEO%2016345bfd2d2281148a11e58683d4aa33/Screenshot_from_2024-10-22_11-48-44.png"><img
+									style="width:707.984375px"
+									src="SEO%2016345bfd2d2281148a11e58683d4aa33/Screenshot_from_2024-10-22_11-48-44.png" /></a>
+						</figure>
+						<p id="16345bfd-2d22-81c3-949b-e26518a03ea8" class=""><strong>Tabelas</strong>: Para comparação
+							de dados, estatísticas ou classificações.</p>
+						<figure id="16345bfd-2d22-814a-b33c-fa93177f7697" class="image"><a
+								href="SEO%2016345bfd2d2281148a11e58683d4aa33/Screenshot_from_2024-10-22_11-49-41.png"><img
+									style="width:707.984375px"
+									src="SEO%2016345bfd2d2281148a11e58683d4aa33/Screenshot_from_2024-10-22_11-49-41.png" /></a>
+						</figure>
+						<p id="16345bfd-2d22-81c2-bdde-f0c2b4fbbf2f" class="">
+						</p>
+					</details>
+				</li>
+			</ul>
+			<ul id="16345bfd-2d22-81e5-9f00-f850a96df7d6" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>Ferramenta de Análise de Site</strong></summary>
+						<p id="16345bfd-2d22-81c3-a03a-e02c196f4904" class="">Analisar um site envolve compreender os
+							objetivos de cada página, em um processo voltado para o aumento de tráfego e de conversão.
+						</p>
+						<p id="16345bfd-2d22-8133-a8b9-d3b1b72498b8" class="">SEO (Search Engine Optimization)</p>
+						<p id="16345bfd-2d22-81d0-9efc-c2e76c8b5427" class="">CRO (Conversion Rate Optimization)</p>
+						<p id="16345bfd-2d22-81a9-b482-ec046b24cd2f" class="">Os 4 fatores mais importantes a serem
+							avaliados na análise de um site são: sua capacidade de persuasão para conversão de um
+							visitante, a velocidade de carregamento, o quão otimizado ele está para ranquear bem em
+							sites de busca e a responsividade em dispositivos móveis.</p>
+						<p id="16345bfd-2d22-81fe-9f10-e3f62af18e84" class=""><strong>1. Persuasão</strong>
+						<div class="indented">
+							<ul id="16345bfd-2d22-81db-a125-c99e4f03f0ec" class="bulleted-list">
+								<li style="list-style-type:disc">Possuir um título visível e claro</li>
+							</ul>
+							<ul id="16345bfd-2d22-8197-9245-dd53e66c0778" class="bulleted-list">
+								<li style="list-style-type:disc">Entender a oferta da sua página rapidamente</li>
+							</ul>
+							<ul id="16345bfd-2d22-81db-a79f-e5648408bf47" class="bulleted-list">
+								<li style="list-style-type:disc">Visualizar um botão de conversão (CTA) claramente</li>
+							</ul>
+							<ul id="16345bfd-2d22-818d-945a-f0aa64b73944" class="bulleted-list">
+								<li style="list-style-type:disc">Focar em apenas uma ação do usuário</li>
+							</ul>
+							<ul id="16345bfd-2d22-81b8-a36c-fe2522a2e7bc" class="bulleted-list">
+								<li style="list-style-type:disc">Despertar um sentimento de urgência no usuário</li>
+							</ul>
+							<ul id="16345bfd-2d22-8174-973d-e9bb47590358" class="bulleted-list">
+								<li style="list-style-type:disc">Conter elementos de prova social</li>
+							</ul>
+							<ul id="16345bfd-2d22-8164-8c2b-ffab7e3df0c6" class="bulleted-list">
+								<li style="list-style-type:disc">Informar as vantagens do seu produto ou serviço</li>
+							</ul>
+							<ul id="16345bfd-2d22-81de-aa69-eb95e2a6586f" class="bulleted-list">
+								<li style="list-style-type:disc">Geração de valor que é proporcionada</li>
+							</ul>
+							<ul id="16345bfd-2d22-8145-90db-f0822cb21a63" class="bulleted-list">
+								<li style="list-style-type:disc">Ter uma boa experiência tanto em desktop quanto em
+									mobile</li>
+							</ul>
+							<ul id="16345bfd-2d22-819e-ae8f-f62e90eade6e" class="bulleted-list">
+								<li style="list-style-type:disc">Oferecer uma seção de perguntas e respostas, com um FAQ
+								</li>
+							</ul>
+						</div>
+						</p>
+						<p id="16345bfd-2d22-8187-a3eb-dcae5d8c2518" class=""><strong>2. SEO</strong>
+						<div class="indented">
+							<ul id="16345bfd-2d22-815a-b6a7-c9775ee05708" class="bulleted-list">
+								<li style="list-style-type:disc">Possuir uma title tag</li>
+							</ul>
+							<ul id="16345bfd-2d22-814b-bc36-da2bafe30904" class="bulleted-list">
+								<li style="list-style-type:disc">A title tag ter um tamanho adequado</li>
+							</ul>
+							<ul id="16345bfd-2d22-81f8-bc2a-ebd5f96e1f52" class="bulleted-list">
+								<li style="list-style-type:disc">Ter uma meta description</li>
+							</ul>
+							<ul id="16345bfd-2d22-81b3-92fb-f95ea3e54639" class="bulleted-list">
+								<li style="list-style-type:disc">A meta description ter um tamanho correto</li>
+							</ul>
+							<ul id="16345bfd-2d22-8175-bca3-d290e7d522eb" class="bulleted-list">
+								<li style="list-style-type:disc">Possuir um <a
+										href="https://www.rdstation.com/blog/marketing/dominio-subdominio-subdiretorio/">domínio
+										próprio</a></li>
+							</ul>
+							<ul id="16345bfd-2d22-81af-b355-cb9cc81ed2e3" class="bulleted-list">
+								<li style="list-style-type:disc">Ter um <a
+										href="https://www.rdstation.com/blog/marketing/certificado-ssl/">certificado
+										SSL</a></li>
+							</ul>
+						</div>
+						</p>
+						<p id="16345bfd-2d22-81a8-8d99-e48d73987b38" class=""><strong>3. Responsividade</strong>
+						<div class="indented">
+							<ul id="16345bfd-2d22-819c-9e3a-e044a8691824" class="bulleted-list">
+								<li style="list-style-type:disc">Uma página é responsiva quando se adapta a todos os
+									dispositivos: desktop, smartphone ou tablet.</li>
+							</ul>
+						</div>
+						</p>
+						<p id="16345bfd-2d22-8197-bdd1-c5254da652a7" class=""><strong>4. Velocidade</strong>
+						<div class="indented">
+							<ul id="16345bfd-2d22-8104-8536-d894e309942c" class="bulleted-list">
+								<li style="list-style-type:disc">Tempo de carregamento adequado</li>
+							</ul>
+							<ul id="16345bfd-2d22-812a-873c-d5e707f7fd7c" class="bulleted-list">
+								<li style="list-style-type:disc">Aproveitamento do cache do navegador</li>
+							</ul>
+							<ul id="16345bfd-2d22-81c4-b35d-fbf2c00762f3" class="bulleted-list">
+								<li style="list-style-type:disc">Otimização de imagens</li>
+							</ul>
+							<ul id="16345bfd-2d22-8198-9293-e34e1ad02306" class="bulleted-list">
+								<li style="list-style-type:disc">Usar JavaScript e CSS de bloqueio para renderização
+									para otimizar seu carregamento</li>
+							</ul>
+							<ul id="16345bfd-2d22-8133-9983-e5b180bae1b4" class="bulleted-list">
+								<li style="list-style-type:disc">Compactar o arquivo HTML</li>
+							</ul>
+							<ul id="16345bfd-2d22-81bf-b4c8-d03b81cadd23" class="bulleted-list">
+								<li style="list-style-type:disc">Compactar o arquivo JavaScript</li>
+							</ul>
+							<ul id="16345bfd-2d22-8151-8a84-ddfbd2824eed" class="bulleted-list">
+								<li style="list-style-type:disc">Usar CDN para otimizar o tempo de carregamento</li>
+							</ul>
+							<ul id="16345bfd-2d22-81d3-bac5-f4c9ef5ebbcc" class="bulleted-list">
+								<li style="list-style-type:disc">Compactar o CSS</li>
+							</ul>
+						</div>
+						</p>
+					</details>
+				</li>
+			</ul>
+			<ul id="16345bfd-2d22-81de-880c-d7bef7d0e7a6" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>Pesquisa de palavras-chave</strong></summary>
+						<p id="16345bfd-2d22-8167-ad3f-ca5256910960" class=""><mark
+								class="highlight-purple"><strong>Planejamento de pesquisa: tópicos e seed
+									keywords</strong></mark></p>
+						<p id="16345bfd-2d22-815d-bc5f-d0118c351663" class="">Identificação de Tópicos e Seed Keywords
+						<div class="indented">
+							<ul id="16345bfd-2d22-81fa-ae49-e029a861aa40" class="bulleted-list">
+								<li style="list-style-type:disc">Defina personas e mapeie a jornada de compra dos
+									clientes para identificar suas dores, necessidades e comportamentos de busca.</li>
+							</ul>
+							<ul id="16345bfd-2d22-81bc-a6f9-efa526e2e10a" class="bulleted-list">
+								<li style="list-style-type:disc">Pesquise palavras-chave que já estão gerando tráfego
+									para o seu site, incluindo categorias do blog e páginas com bom desempenho.</li>
+							</ul>
+							<ul id="16345bfd-2d22-81e6-b656-c14aec054060" class="bulleted-list">
+								<li style="list-style-type:disc">Utilize ferramentas como SimilarWeb para analisar os
+									sites dos concorrentes e identificar palavras-chave e tópicos relevantes.</li>
+							</ul>
+							<p id="16345bfd-2d22-81a5-b578-c562b4542366" class="">Criação de um Mapa Mental
+							<div class="indented">
+								<ul id="16345bfd-2d22-8142-b3c4-eada6484363f" class="bulleted-list">
+									<li style="list-style-type:disc">Organize os tópicos e keywords em um mapa mental
+										para visualizar a estrutura, inter-relações e potenciais novas oportunidades.
+										Agrupe palavras-chave em clusters relacionados a temas principais e suas
+										variações.</li>
+								</ul>
+							</div>
+							</p>
+							<p id="16345bfd-2d22-81b5-9f86-e69dd2c7e1c4" class="">
+							</p>
+						</div>
+						</p>
+						<p id="16345bfd-2d22-81c0-94ef-c78eb33ae0f8" class=""><mark
+								class="highlight-purple"><strong>Pesquisa de palavras-chaves</strong></mark></p>
+						<ul id="16345bfd-2d22-81bd-ac82-c42ebfbb5902" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Google Keyword Planner</strong>: Ideal para
+								encontrar novas palavras-chave e obter dados de volume de busca e concorrência. Requer
+								uma conta no Google Ads para acesso.</li>
+						</ul>
+						<ul id="16345bfd-2d22-81b0-a0de-cbfbd78b4015" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Ubersuggest</strong>: Oferece sugestões de
+								palavras-chave, volume de busca, dificuldade de SEO e estimativas de tráfego.</li>
+						</ul>
+						<ul id="16345bfd-2d22-81f6-8264-e195036ab570" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>SEMrush</strong>: Ferramenta completa para pesquisa
+								de concorrentes, análise de keywords, volume de busca, e oportunidades de otimização de
+								SEO.</li>
+						</ul>
+						<p id="16345bfd-2d22-8130-87a7-c0db1a426cd5" class="">
+						</p>
+						<p id="16345bfd-2d22-818f-9715-c3bfadf74970" class=""><mark
+								class="highlight-default"><strong>Organização na Planilha Final</strong></mark><mark
+								class="highlight-default">:</mark></p>
+						<ul id="16345bfd-2d22-81df-a86d-fbc2d36c035c" class="bulleted-list">
+							<li style="list-style-type:disc">Colunas para: Palavra-chave, Ferramenta de Origem, Volume
+								de Busca (média entre as ferramentas), Concorrência (Alta, Média, Baixa), Custo por
+								Clique (média), e Prioridade (com base no volume e na concorrência).</li>
+						</ul>
+						<p id="16345bfd-2d22-8119-b933-e3fc88c3b2f7" class=""><mark
+								class="highlight-purple"><strong>Pós-pesquisa</strong></mark></p>
+						<ul id="16345bfd-2d22-81c4-b4ee-d0c233e7b4f5" class="bulleted-list">
+							<li style="list-style-type:disc">Exporte os dados para uma planilha e trabalhe com as
+								informações encontradas.</li>
+						</ul>
+						<ul id="16345bfd-2d22-812a-9463-dfe8ee065db1" class="bulleted-list">
+							<li style="list-style-type:disc">Classifique as palavras-chave por volume de busca ou
+								dificuldade, conforme sua estratégia.</li>
+						</ul>
+						<ul id="16345bfd-2d22-81a7-98e2-f6849b509789" class="bulleted-list">
+							<li style="list-style-type:disc">Agrupe-as em categorias, como &quot;Palavras-Chave de
+								Cabeça&quot; (alta procura) e &quot;Palavras-Chave de Cauda Longa&quot; (mais
+								específicas e com menor volume, porém mais fáceis de ranquear).</li>
+						</ul>
+						<ul id="16345bfd-2d22-813d-8d48-d996c7e9d7ad" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Curiosidade: Topic clusters</strong> são uma
+								estratégia de SEO que envolve a organização de conteúdo em torno de tópicos principais
+								(ou &quot;pilares&quot;) e subtemas relacionados. Ao invés de criar diversos posts
+								isolados, os <strong>topic clusters</strong> estruturam o conteúdo de forma interligada,
+								permitindo que os mecanismos de busca compreendam melhor a profundidade e relevância do
+								site para determinado tema.</li>
+						</ul>
+						<p id="16345bfd-2d22-81a5-b308-d4d64abca30c" class="">
+						</p>
+						<p id="16345bfd-2d22-818b-97ed-f023ff193127" class=""><strong><a
+									href="https://emojipedia.org/trophy">🏆</a></strong><strong> </strong><mark
+								class="highlight-default"><mark class="highlight-purple_background"><strong>A planilha é
+										uma fonte para:</strong></mark></mark>
+						<div class="indented">
+							<ul id="16345bfd-2d22-8114-899c-e2e5d9157332" class="bulleted-list">
+								<li style="list-style-type:disc"><mark class="highlight-default"><mark
+											class="highlight-purple_background"><strong>Criar pautas no
+												blog</strong></mark></mark></li>
+							</ul>
+							<ul id="16345bfd-2d22-81c1-84d9-ca553d0dcfab" class="bulleted-list">
+								<li style="list-style-type:disc"><mark class="highlight-default"><mark
+											class="highlight-purple_background"><strong>Paute de materiais
+												ricos</strong></mark></mark></li>
+							</ul>
+							<ul id="16345bfd-2d22-817d-bdc9-c8f8376f0f38" class="bulleted-list">
+								<li style="list-style-type:disc"><mark class="highlight-default"><mark
+											class="highlight-purple_background"><strong>Otimização e republicação de
+												conteúdos</strong></mark></mark></li>
+							</ul>
+							<ul id="16345bfd-2d22-8187-b7a8-f298069d70da" class="bulleted-list">
+								<li style="list-style-type:disc"><mark class="highlight-default"><mark
+											class="highlight-purple_background"><strong>Otimização de site institucional
+												e páginas de produtos</strong></mark></mark></li>
+							</ul>
+						</div>
+						</p>
+						<p id="16345bfd-2d22-8160-93d3-c5872310d267" class="">
+						</p>
+					</details>
+				</li>
+			</ul>
+			<ul id="16345bfd-2d22-81c4-84d3-ca64c0e0ce54" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>SEO Offpage</strong></summary>
+						<p id="16345bfd-2d22-8134-9b50-c25a8e3089dd" class="">Refere-se a todas as ações realizadas fora
+							do seu site para melhorar sua posição nos resultados dos motores de busca. Isso inclui a
+							construção de backlinks, interações em redes sociais e menções da marca em outros sites.</p>
+						<p id="16345bfd-2d22-81a3-867f-e2e5a98957d5" class=""><strong>Ações que podem impactar (que você
+								não controla)</strong></p>
+						<ul id="16345bfd-2d22-810c-bc87-de85b8f7914e" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Link Building</strong>: Construção de backlinks de
+								qualidade de sites relevantes para aumentar a autoridade do seu site.</li>
+						</ul>
+						<ul id="16345bfd-2d22-817c-b10b-efb163281b66" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Assessoria de imprensa</strong>: Publicar notícias
+								ou comunicados em veículos de imprensa pode gerar menções e backlinks valiosos.</li>
+						</ul>
+						<ul id="16345bfd-2d22-81ca-8d6a-ff950e5662b0" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Atuação em mídias sociais</strong>: O engajamento
+								nas redes sociais pode aumentar a visibilidade da marca e atrair tráfego para o site.
+							</li>
+						</ul>
+						<ul id="16345bfd-2d22-81d6-a921-f0ec808c3fc0" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>SEO local</strong>: Otimização para buscas
+								regionais, mantendo informações atualizadas no Google Meu Negócio, gerando reviews e
+								otimizando para buscas locais.</li>
+						</ul>
+						<hr id="16345bfd-2d22-81a5-9e24-e1e3ea4bb9b1" />
+						<p id="16345bfd-2d22-810c-b82e-fa1c6400e745" class=""><strong>Conceitos Relacionados</strong>
+						</p>
+						<ul id="16345bfd-2d22-81d6-b696-c1f892dbcec7" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Links</strong>: Hyperlinks que apontam para o seu
+								site, contribuindo para seu ranking nos motores de busca.</li>
+						</ul>
+						<ul id="16345bfd-2d22-8114-96ae-f3cf5176e99b" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Links nofollow</strong>: Links que instruem os
+								motores de busca a não passar autoridade para o site de destino, embora possam gerar
+								tráfego.</li>
+						</ul>
+						<ul id="16345bfd-2d22-8196-ae7f-c09301c014f2" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Menções</strong>: Citações da sua marca em outros
+								sites, com ou sem links, que ajudam a melhorar a reputação online.</li>
+						</ul>
+						<ul id="16345bfd-2d22-8130-8631-ef6d8a3f892a" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Fatores locais (SEO local)</strong>: Elementos que
+								ajudam na otimização para buscas em uma área geográfica específica, essencial para
+								negócios locais.</li>
+						</ul>
+					</details>
+				</li>
+			</ul>
+			<ul id="16345bfd-2d22-81ac-adba-dcd7b8c26fc9" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>SEO Local</strong></summary>
+						<ul id="16345bfd-2d22-81c2-b90a-f5cfdd712573" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Google Meu Negócio:</strong> Ferramenta essencial
+								para gerenciar a presença online de empresas, permitindo que informações como horário de
+								funcionamento, localização e avaliações sejam exibidas nos resultados de pesquisa e no
+								Google Maps.</li>
+						</ul>
+						<ul id="16345bfd-2d22-819e-9225-e0356d946a75" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Google Maps:</strong> Plataforma onde as empresas
+								podem ser encontradas por localização, crucial para atrair clientes locais e aumentar a
+								visibilidade.</li>
+						</ul>
+						<ul id="16345bfd-2d22-814a-8347-de9354791f15" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Snippets para Negócio Local:</strong> Respostas
+								diretas e informações resumidas que aparecem nos resultados de pesquisa, ajudando a
+								destacar informações relevantes sobre o negócio.</li>
+						</ul>
+						<ul id="16345bfd-2d22-81d7-b236-cad39c0ab71d" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Pesquisa de Palavras-Chave:</strong> Processo de
+								identificar as palavras e frases que os clientes potenciais usam para encontrar produtos
+								ou serviços, fundamental para otimizar o conteúdo e melhorar a classificação nos
+								resultados de busca locais.</li>
+						</ul>
+					</details>
+				</li>
+			</ul>
+			<ul id="16345bfd-2d22-8181-87ec-c5cb51ac141d" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>SEO Tecnico</strong></summary>
+						<p id="16345bfd-2d22-81fa-b9dd-e41d7e67492b" class=""><strong>Canonical</strong></p>
+						<ul id="16345bfd-2d22-811b-b703-cbc87e042c8d" class="bulleted-list">
+							<li style="list-style-type:disc">A tag canonical em conteúdos duplicados indica qual é a
+								versão principal para os mecanismos de busca.</li>
+						</ul>
+						<ul id="16345bfd-2d22-8193-93f4-fcc90193c4ac" class="bulleted-list">
+							<li style="list-style-type:disc">A Canonical Tag é uma marcação HTML usada para indicar a
+								versão preferida de uma página entre várias URLs semelhantes, evitando problemas de
+								conteúdo duplicado e melhorando o SEO.</li>
+						</ul>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+							integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+							crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+						<link rel="stylesheet"
+							href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+							integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+							crossorigin="anonymous" referrerPolicy="no-referrer" />
+						<pre id="16345bfd-2d22-8117-a8b3-d9602b59d100"
+							class="code"><code class="language-HTML">&lt;link rel=&quot;canonical&quot; href=&quot;https://www.exemplo.com/pagina-preferida&quot;&gt;</code></pre>
+						<p id="16345bfd-2d22-817b-8006-e5c4c19ab64b" class="">Paginação SEO friendly</p>
+						<figure id="16345bfd-2d22-814f-b90d-cbab4a3bd487" class="image"><a
+								href="SEO%2016345bfd2d2281148a11e58683d4aa33/Screenshot_from_2024-10-24_21-03-25.png"><img
+									style="width:679.953125px"
+									src="SEO%2016345bfd2d2281148a11e58683d4aa33/Screenshot_from_2024-10-24_21-03-25.png" /></a>
+						</figure>
+						<p id="16345bfd-2d22-8142-84ab-c005c4c798f0" class=""><strong>Title</strong></p>
+						<p id="16345bfd-2d22-81b0-9521-e6510bf195f2" class="">A tag <code>&lt;title&gt;</code> define o
+							título de uma página web, que é exibido na aba do navegador e nos resultados de busca. É um
+							dos fatores mais importantes de SEO.</p>
+						<p id="16345bfd-2d22-81a7-8bc7-d2e111205938" class=""><strong>Exemplo:</strong></p>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+							integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+							crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+						<link rel="stylesheet"
+							href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+							integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+							crossorigin="anonymous" referrerPolicy="no-referrer" />
+						<pre id="16345bfd-2d22-81f7-a763-cc87a90ef839"
+							class="code"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;title&gt;Aprenda HTML e SEO - Guia Completo&lt;/title&gt;</code></pre>
+						<p id="16345bfd-2d22-8193-b9a6-e77949eb7fee" class=""><strong>Description</strong></p>
+						<p id="16345bfd-2d22-81b3-90f0-f540d2d0ff7c" class="">A meta tag &quot;description&quot; fornece
+							um resumo breve da página para os mecanismos de busca e pode ser exibida nos resultados de
+							pesquisa. Ajuda a atrair cliques, mas não afeta diretamente o ranking.</p>
+						<p id="16345bfd-2d22-81dd-83ae-f92c4cdcccc0" class=""><strong>Exemplo:</strong></p>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+							integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+							crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+						<link rel="stylesheet"
+							href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+							integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+							crossorigin="anonymous" referrerPolicy="no-referrer" />
+						<pre id="16345bfd-2d22-819b-a278-f3d9eeb59f98"
+							class="code"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;meta name=&quot;description&quot; content=&quot;Aprenda HTML e técnicas de SEO para otimizar seu site e melhorar seu rankeamento no Google.&quot;&gt;</code></pre>
+						<p id="16345bfd-2d22-817c-b59f-daa1e5cdd994" class=""><strong>Meta Content-Type</strong></p>
+						<p id="16345bfd-2d22-8159-8508-ebb994d7963c" class="">A meta tag &quot;content-type&quot;
+							especifica a codificação de caracteres usada na página. Isso garante que o conteúdo seja
+							interpretado corretamente pelos navegadores.</p>
+						<p id="16345bfd-2d22-810b-bd2a-c2520c79be1f" class=""><strong>Exemplo:</strong></p>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+							integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+							crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+						<link rel="stylesheet"
+							href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+							integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+							crossorigin="anonymous" referrerPolicy="no-referrer" />
+						<pre id="16345bfd-2d22-8104-b133-f9f1e1925208"
+							class="code"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre>
+						<p id="16345bfd-2d22-81ec-84aa-ef76b8519537" class=""><strong>Meta Tag Robots (noindex,
+								nofollow, disallow)</strong></p>
+						<p id="16345bfd-2d22-811d-a280-d66302074c6a" class="">A meta tag &quot;robots&quot; informa aos
+							mecanismos de busca como indexar ou não a página. As instruções comuns incluem:</p>
+						<ul id="16345bfd-2d22-81bb-bd36-d6e0fca261ae" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>noindex:</strong> impede que a página seja
+								indexada.</li>
+						</ul>
+						<ul id="16345bfd-2d22-8180-8c12-f06ad88e2dab" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>nofollow:</strong> impede que links na página sejam
+								seguidos.</li>
+						</ul>
+						<ul id="16345bfd-2d22-81c8-ad57-fa585d030b75" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>disallow:</strong> geralmente usada no arquivo
+								robots.txt, impede que bots acessem determinadas partes do site.</li>
+						</ul>
+						<p id="16345bfd-2d22-8137-b391-ff3502e55998" class=""><strong>Exemplo:</strong></p>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+							integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+							crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+						<link rel="stylesheet"
+							href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+							integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+							crossorigin="anonymous" referrerPolicy="no-referrer" />
+						<pre id="16345bfd-2d22-8184-9754-d03aaabe4512"
+							class="code"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;meta name=&quot;robots&quot; content=&quot;noindex, nofollow&quot;&gt;</code></pre>
+						<p id="16345bfd-2d22-81f5-a2da-f14dad9a82d6" class="">Isso instrui os bots a não indexarem a
+							página nem seguirem os links nela.</p>
+						<p id="16345bfd-2d22-815f-815f-d53917cbe0ac" class=""><strong>Refresh</strong></p>
+						<p id="16345bfd-2d22-817d-b571-ef6ea076e1f0" class="">A meta tag <strong>refresh</strong> é
+							usada para redirecionar automaticamente uma página ou atualizar o conteúdo após um
+							determinado período de tempo. Embora seja menos comum para SEO, pode ser útil em certos
+							contextos, como redirecionamentos temporários.</p>
+						<p id="16345bfd-2d22-8139-a852-d37e7678e391" class="">Exemplo de uso:</p>
+						<p id="16345bfd-2d22-8187-8acb-e00e02330896" class="">Para redirecionar para uma nova página
+							após 5 segundos:</p>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+							integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+							crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+						<link rel="stylesheet"
+							href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+							integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+							crossorigin="anonymous" referrerPolicy="no-referrer" />
+						<pre id="16345bfd-2d22-811d-a4ea-d879b56748e5" class="code"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">html
+Copiar código
+&lt;meta http-equiv=&quot;refresh&quot; content=&quot;5;url=https://www.exemplo.com/nova-pagina&quot;&gt;
+
+</code></pre>
+						<p id="16345bfd-2d22-81d4-9f73-ead0967cd12a" class="">Neste exemplo, o navegador atualizará ou
+							redirecionará para a URL especificada após 5 segundos.</p>
+						<p id="16345bfd-2d22-814b-aabd-eceff7ca6e84" class=""><strong>Nota:</strong>
+						<div class="indented">
+							<p id="16345bfd-2d22-813a-be93-d4f2b33aad30" class="">Usar redirecionamentos com meta
+								refresh não é recomendado para SEO, pois redirecionamentos 301 ou 302 são mais eficazes
+								e respeitados pelos mecanismos de busca.</p>
+						</div>
+						</p>
+						<p id="16345bfd-2d22-81b8-adc6-f6374b58bb21" class="">Heading</p>
+						<p id="16345bfd-2d22-81c7-b643-e4ad3fff1fea" class="">Os <strong>headings</strong> são elementos
+							HTML que definem títulos e subtítulos em uma página web, organizando o conteúdo em uma
+							hierarquia de importância de <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>. Eles são
+							importantes tanto para a estrutura do documento quanto para SEO, já que os mecanismos de
+							busca utilizam essa hierarquia para entender a relevância e o contexto do conteúdo.</p>
+						<p id="16345bfd-2d22-81c5-b11f-f6a20e1490bf" class=""><mark
+								class="highlight-purple"><strong>Arquitetura da Informação: Em busca da navegabilidade
+									perdida</strong></mark></p>
+						<p id="16345bfd-2d22-811a-bcc8-c0c971e871ef" class=""><strong>Arquitetura da Informação
+								(AI)</strong> refere-se à forma como o conteúdo de um site é organizado, estruturado e
+							apresentado aos usuários, facilitando sua navegação e compreensão. Quando aplicada ao SEO, a
+							arquitetura da informação tem um papel fundamental em ajudar os mecanismos de busca a
+							entender a hierarquia do conteúdo e em garantir uma <strong>navegabilidade
+								eficiente</strong> para os usuários.</p>
+						<p id="16345bfd-2d22-8152-8ec0-fc971f4d18f3" class=""><strong>Como a Arquitetura da Informação
+								Afeta o SEO:</strong></p>
+						<ol type="1" id="16345bfd-2d22-8134-a3d4-cab6be3ee0b5" class="numbered-list" start="1">
+							<li><strong>Hierarquia Clara:</strong> Uma estrutura bem definida com categorias e
+								subcategorias lógicas ajuda os motores de busca a entender o relacionamento entre as
+								páginas.</li>
+						</ol>
+						<ol type="1" id="16345bfd-2d22-8170-b95f-eed2a7fae38e" class="numbered-list" start="2">
+							<li><strong>Links Internos:</strong> Uma boa AI facilita o uso de links internos, o que
+								distribui a autoridade (link juice) de SEO entre as páginas e melhora a experiência do
+								usuário ao navegar pelo site.</li>
+						</ol>
+						<ol type="1" id="16345bfd-2d22-8157-9e5c-fad707073b1b" class="numbered-list" start="3">
+							<li><strong>URL Amigáveis:</strong> URLs limpas e descritivas, derivadas de uma boa
+								arquitetura, ajudam tanto o SEO quanto a usabilidade, deixando claro o conteúdo da
+								página.</li>
+						</ol>
+						<ol type="1" id="16345bfd-2d22-8113-97a4-f2253383cce8" class="numbered-list" start="4">
+							<li><strong>Facilidade de Indexação:</strong> Quando o conteúdo está organizado de forma
+								acessível, os mecanismos de busca podem rastrear e indexar o site com mais eficiência.
+							</li>
+						</ol>
+						<ol type="1" id="16345bfd-2d22-81b3-829d-ccd518fadafe" class="numbered-list" start="5">
+							<li><strong>Melhora na Experiência do Usuário (UX):</strong> Quanto mais intuitiva a
+								navegação, maior a probabilidade de os usuários encontrarem o que procuram, permanecendo
+								no site por mais tempo e reduzindo a taxa de rejeição.</li>
+						</ol>
+						<p id="16345bfd-2d22-8134-9959-da280f5fb0f9" class=""><strong>Em busca da navegabilidade perdida
+								no SEO:</strong></p>
+						<p id="16345bfd-2d22-817f-975e-d79e0f9b0353" class="">Sites que falham em ter uma boa
+							arquitetura de informação podem sofrer com <strong>páginas perdidas</strong> no índice do
+							Google, dificuldade para que os usuários encontrem informações ou produtos e até mesmo uma
+							<strong>experiência fragmentada</strong>. Para evitar essa &quot;navegabilidade
+							perdida&quot;, é essencial:</p>
+						<ul id="16345bfd-2d22-818b-873c-cd03b3bf8373" class="bulleted-list">
+							<li style="list-style-type:disc">Usar <strong>headings adequados</strong> (como vimos
+								anteriormente) para estruturar o conteúdo.</li>
+						</ul>
+						<ul id="16345bfd-2d22-8118-868f-eb818f722ee0" class="bulleted-list">
+							<li style="list-style-type:disc">Definir <strong>menu de navegação claro</strong>.</li>
+						</ul>
+						<ul id="16345bfd-2d22-814c-ad26-ed44a056fceb" class="bulleted-list">
+							<li style="list-style-type:disc">Garantir que os usuários possam retornar facilmente à
+								página inicial ou às principais categorias.</li>
+						</ul>
+						<p id="16345bfd-2d22-81b7-8f71-e99dbb706db1" class=""><strong>Exemplo de Boa Arquitetura de
+								Informação:</strong></p>
+						<p id="16345bfd-2d22-8161-b18f-c8b31b5f7ed2" class="">Imagine um e-commerce de livros:</p>
+						<ul id="16345bfd-2d22-8168-ad30-d110fdf43991" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Página Principal</strong> (com
+								<code>&lt;h1&gt;</code>: &quot;Livraria Online&quot;)</li>
+						</ul>
+						<ul id="16345bfd-2d22-81fe-9ba8-ef5028737ec3" class="bulleted-list">
+							<li style="list-style-type:disc">Categorias: <strong>Ficção</strong>,
+								<strong>Não-ficção</strong>, <strong>Infantil</strong>
+								<ul id="16345bfd-2d22-81c2-bb02-cc7b062b3e83" class="bulleted-list">
+									<li style="list-style-type:circle">Subcategorias: Dentro de Ficção, por exemplo,
+										pode haver <strong>Romance</strong>, <strong>Fantasia</strong>, etc.</li>
+								</ul>
+								<ul id="16345bfd-2d22-81a7-b6e0-eb52ccac63d3" class="bulleted-list">
+									<li style="list-style-type:circle">Cada livro tem uma página de produto individual,
+										interligada às suas categorias e subcategorias.</li>
+								</ul>
+							</li>
+						</ul>
+						<p id="16345bfd-2d22-8110-ac10-fff7726e4017" class="">Essa estrutura permite que o usuário
+							encontre um livro facilmente, enquanto os mecanismos de busca entendem a relação entre as
+							páginas e dão prioridade ao conteúdo mais relevante.</p>
+						<p id="16345bfd-2d22-81f0-abc8-fe9821b10a7b" class=""><strong>Conclusão</strong>: Uma
+							arquitetura de informação bem planejada é o equilíbrio entre <strong>usabilidade</strong> e
+							<strong>SEO</strong>, garantindo que tanto os motores de busca quanto os usuários tenham uma
+							experiência eficiente e satisfatória no site.</p>
+						<p id="16345bfd-2d22-81c0-b626-c37b62004cdf" class=""><mark
+								class="highlight-purple"><strong>Sitemap.xml e Robots.txt</strong></mark></p>
+						<p id="16345bfd-2d22-8178-8a38-c60363da8f18" class=""><strong>Sitemap.xml</strong></p>
+						<p id="16345bfd-2d22-8109-9782-df40167de140" class="">O <strong>sitemap.xml</strong> é um
+							arquivo que lista todas as URLs de um site, ajudando os mecanismos de busca a descobrir e
+							indexar seu conteúdo. Ele pode incluir informações adicionais, como a frequência de
+							atualização e a prioridade de cada página.</p>
+						<p id="16345bfd-2d22-8105-af51-df11f3dbc3d4" class=""><strong>Exemplo:</strong></p>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+							integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+							crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+						<link rel="stylesheet"
+							href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+							integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+							crossorigin="anonymous" referrerPolicy="no-referrer" />
+						<pre id="16345bfd-2d22-81f6-aa48-cbce9fa10449" class="code"><code class="language-XML" style="white-space:pre-wrap;word-break:break-all">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;urlset xmlns=&quot;&lt;http://www.sitemaps.org/schemas/sitemap-image/1.1&gt;&quot;&gt;
+  &lt;url&gt;
+    &lt;loc&gt;&lt;https://www.exemplo.com/&gt;&lt;/loc&gt;
+    &lt;lastmod&gt;2024-10-20&lt;/lastmod&gt;
+    &lt;changefreq&gt;weekly&lt;/changefreq&gt;
+    &lt;priority&gt;1.0&lt;/priority&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;&lt;https://www.exemplo.com/pagina1&gt;&lt;/loc&gt;
+    &lt;lastmod&gt;2024-10-18&lt;/lastmod&gt;
+    &lt;changefreq&gt;monthly&lt;/changefreq&gt;
+    &lt;priority&gt;0.8&lt;/priority&gt;
+  &lt;/url&gt;
+&lt;/urlset&gt;
+</code></pre>
+						<p id="16345bfd-2d22-816b-9259-dec764575359" class=""><strong>Robots.txt</strong></p>
+						<p id="16345bfd-2d22-81bb-b216-e259c0d01466" class="">O <strong>robots.txt</strong> é um arquivo
+							que informa aos mecanismos de busca quais partes de um site podem ou não ser acessadas. É
+							utilizado para controlar o rastreamento e indexação de conteúdo específico.</p>
+						<p id="16345bfd-2d22-818e-b166-fbd615f762b1" class=""><strong>Exemplo:</strong></p>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+							integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+							crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+						<link rel="stylesheet"
+							href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+							integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+							crossorigin="anonymous" referrerPolicy="no-referrer" />
+						<pre id="16345bfd-2d22-8197-a640-cfea1bc8a1ff" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">User-agent: *
+Disallow: /privado/
+Allow: /publico/
+</code></pre>
+						<p id="16345bfd-2d22-8130-ba43-fe0befc86480" class="">Nesse exemplo, todos os bots (indicado por
+							<code>User-agent: *</code>) são instruídos a não acessar a pasta <code>/privado/</code>, mas
+							podem acessar a pasta <code>/publico/</code>.</p>
+						<p id="16345bfd-2d22-813d-90cd-e4cf7a9b5945" class=""><mark
+								class="highlight-purple"><strong>Rich Snippets</strong></mark></p>
+						<p id="16345bfd-2d22-81cb-8c87-c52ba33caba5" class=""><strong>Rich Snippets</strong> são
+							resultados de busca enriquecidos que incluem informações adicionais, como avaliações,
+							preços, receitas e eventos, proporcionando uma apresentação mais atrativa nos resultados de
+							pesquisa. Eles são gerados a partir de marcas estruturadas (schema.org) que ajudam os
+							mecanismos de busca a entender melhor o conteúdo.</p>
+						<p id="16345bfd-2d22-81a4-b173-db84e44b10c8" class="">Benefícios:</p>
+						<ul id="16345bfd-2d22-81dd-9ba1-ca0465ae568d" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Aumenta a Taxa de Cliques (CTR)</strong></li>
+						</ul>
+						<ul id="16345bfd-2d22-81a9-b83e-db53abcd9e7b" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Melhora a Experiência do Usuário</strong></li>
+						</ul>
+						<ul id="16345bfd-2d22-8171-b809-e619b747e8cc" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Diferenciação nos Resultados de Busca</strong></li>
+						</ul>
+						<p id="16345bfd-2d22-81ad-a329-fe9cb8f2bee3" class="">Implementação:</p>
+						<p id="16345bfd-2d22-816a-9cfe-edc39be98ffb" class="">É necessário adicionar marcas de dados
+							estruturados no HTML da página, utilizando JSON-LD, Microdata ou RDFa.</p>
+						<p id="16345bfd-2d22-81d5-b254-c142f06b93d0" class="">Conclusão:</p>
+						<p id="16345bfd-2d22-81c2-8563-e911ccf1c0d8" class="">Rich snippets melhoram a visibilidade e a
+							atratividade de um site, contribuindo para um desempenho melhor em SEO e uma experiência
+							aprimorada para o usuário.</p>
+						<p id="16345bfd-2d22-812d-9759-f58cc9eafd02" class=""><strong>Modelos de marcação de Rich
+								Snipeets:</strong></p>
+						<figure id="16345bfd-2d22-8136-9076-c12298a8f9f2"><a href="https://schema.org/"
+								class="bookmark source">
+								<div class="bookmark-info">
+									<div class="bookmark-text">
+										<div class="bookmark-title">Schema.org - Schema.org</div>
+										<div class="bookmark-description">Schema.org is a set of extensible schemas that
+											enables webmasters to embed structured data on their web pages for use by
+											search engines and other applications.</div>
+									</div>
+									<div class="bookmark-href"><img src="https://schema.org/docs/favicon.ico"
+											class="icon bookmark-icon" />https://schema.org/</div>
+								</div>
+							</a></figure>
+						<figure id="16345bfd-2d22-81c9-8d35-dbc66df5db1c" class="image"><a
+								href="SEO%2016345bfd2d2281148a11e58683d4aa33/Screenshot_from_2024-10-24_21-55-14.png"><img
+									style="width:621px"
+									src="SEO%2016345bfd2d2281148a11e58683d4aa33/Screenshot_from_2024-10-24_21-55-14.png" /></a>
+						</figure>
+						<p id="16345bfd-2d22-8125-8e78-d21b9c74fbc2" class="">
+						</p>
+					</details>
+				</li>
+			</ul>
+			<ul id="16345bfd-2d22-81b6-82bd-d53ed311d2b6" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>Mobile &amp; SEO</strong></summary>
+						<p id="16345bfd-2d22-8137-94f4-eb61c06d2318" class="">A diferença entre site responsivo,
+							dinâmico e adaptativo está relacionada à forma como cada um se comporta em diferentes
+							dispositivos e à maneira como o conteúdo é gerenciado. Aqui estão as principais
+							características de cada um:</p>
+						<p id="16345bfd-2d22-818f-8e39-e818a384c088" class="">1. <strong>Site Responsivo</strong></p>
+						<ul id="16345bfd-2d22-8142-a0b7-ceace83cbb94" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Definição</strong>: Um site responsivo é projetado
+								para se ajustar automaticamente a diferentes tamanhos de tela e resoluções. Utiliza CSS
+								flexível e media queries para alterar o layout com base nas características do
+								dispositivo.</li>
+						</ul>
+						<ul id="16345bfd-2d22-8104-abea-ff680c1e9183" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Vantagens</strong>:<ul
+									id="16345bfd-2d22-816d-811c-f7f84f16a651" class="bulleted-list">
+									<li style="list-style-type:circle">Uma única URL para todos os dispositivos.</li>
+								</ul>
+								<ul id="16345bfd-2d22-810d-ba49-d47b63d75c72" class="bulleted-list">
+									<li style="list-style-type:circle">Melhor para SEO, já que o Google prefere sites
+										responsivos.</li>
+								</ul>
+								<ul id="16345bfd-2d22-813d-9d5f-eb41f2f8862f" class="bulleted-list">
+									<li style="list-style-type:circle">Facilidade de manutenção, pois todo o conteúdo é
+										gerenciado em um único lugar.</li>
+								</ul>
+							</li>
+						</ul>
+						<ul id="16345bfd-2d22-812c-af3a-dae2e12c7c48" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Exemplo</strong>: A maioria dos sites modernos,
+								como blogs e lojas virtuais, utiliza design responsivo.</li>
+						</ul>
+						<p id="16345bfd-2d22-812f-8961-cd965b05f894" class="">2. <strong>Site Dinâmico</strong></p>
+						<ul id="16345bfd-2d22-812d-ae7c-eea2c48a159c" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Definição</strong>: Um site dinâmico pode alterar
+								seu conteúdo e layout em tempo real, dependendo de fatores como interações do usuário,
+								dados de um banco de dados ou informações de sessão. Isso é frequentemente feito usando
+								linguagens de programação como PHP, Python ou JavaScript.</li>
+						</ul>
+						<ul id="16345bfd-2d22-816f-8569-d59a4ce882e4" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Vantagens</strong>:<ul
+									id="16345bfd-2d22-81be-a32e-d04e12b7f262" class="bulleted-list">
+									<li style="list-style-type:circle">Capacidade de personalizar a experiência do
+										usuário com base em dados específicos.</li>
+								</ul>
+								<ul id="16345bfd-2d22-8153-b3a5-c1c0a1891723" class="bulleted-list">
+									<li style="list-style-type:circle">Conteúdo atualizado automaticamente a partir de
+										fontes externas (por exemplo, blogs, redes sociais).</li>
+								</ul>
+							</li>
+						</ul>
+						<ul id="16345bfd-2d22-81ad-a61d-d120752b256a" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Exemplo</strong>: Redes sociais e sites de comércio
+								eletrônico que mostram produtos personalizados com base nas preferências do usuário.
+							</li>
+						</ul>
+						<p id="16345bfd-2d22-81d1-8edd-cfa5287eb83c" class="">3. <strong>Site Adaptativo</strong></p>
+						<ul id="16345bfd-2d22-81f0-9f49-f1ea4867e845" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Definição</strong>: Um site adaptativo utiliza
+								diferentes layouts fixos para diferentes dispositivos. Em vez de ajustar-se
+								dinamicamente, ele detecta o dispositivo e carrega um layout específico otimizado para
+								esse tamanho de tela.</li>
+						</ul>
+						<ul id="16345bfd-2d22-816e-adbb-fa7f9e385f40" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Vantagens</strong>:<ul
+									id="16345bfd-2d22-8159-ad0e-df69f1a57c73" class="bulleted-list">
+									<li style="list-style-type:circle">Melhor controle sobre como o site aparece em
+										diferentes dispositivos.</li>
+								</ul>
+								<ul id="16345bfd-2d22-817f-b6f7-cb6ddb8fa166" class="bulleted-list">
+									<li style="list-style-type:circle">Pode ser mais rápido em dispositivos móveis, pois
+										carrega apenas o que é necessário para aquele dispositivo.</li>
+								</ul>
+							</li>
+						</ul>
+						<ul id="16345bfd-2d22-81a9-b403-d93d3f59e503" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Exemplo</strong>: Alguns sites de notícias ou
+								portais que oferecem versões diferentes para desktop e dispositivos móveis.</li>
+						</ul>
+						<p id="16345bfd-2d22-81d7-9571-ffddd1db4ac4" class=""><strong>Resumo</strong></p>
+						<ul id="16345bfd-2d22-81d6-854c-f8c3602cc0f2" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Responsivo</strong>: Um design que se adapta
+								fluidamente a qualquer tamanho de tela.</li>
+						</ul>
+						<ul id="16345bfd-2d22-8196-bf4b-c9089e302b3b" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Dinâmico</strong>: Conteúdo que muda em resposta a
+								interações do usuário ou dados de um banco de dados.</li>
+						</ul>
+						<ul id="16345bfd-2d22-8165-b945-e705eed171fb" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Adaptativo</strong>: Layouts fixos que são
+								selecionados com base no dispositivo utilizado.</li>
+						</ul>
+						<p id="16345bfd-2d22-812f-b980-ef8e13d97738" class="">Cada abordagem tem suas vantagens e
+							desvantagens, e a escolha entre elas depende das necessidades específicas do projeto.</p>
+						<p id="16345bfd-2d22-81d2-a2ec-c913d1d0000f" class=""><mark class="highlight-purple"><strong>AMP
+									(Accelerated Mobile Pages)</strong></mark></p>
+						<p id="16345bfd-2d22-8112-891f-d683a9057d9e" class=""><strong>AMP (Accelerated Mobile
+								Pages)</strong> é uma iniciativa do Google projetada para melhorar a performance e a
+							velocidade de carregamento de páginas da web em dispositivos móveis. Aqui estão os
+							principais detalhes sobre AMP:</p>
+						<h3 id="16345bfd-2d22-8150-b7ed-df56a5c303cb" class="">O que é AMP?</h3>
+						<p id="16345bfd-2d22-81b4-a468-e75a92e26980" class="">AMP é um projeto de código aberto que
+							permite que desenvolvedores criem páginas da web leves e rápidas, focadas na experiência do
+							usuário em dispositivos móveis. O projeto visa fornecer uma experiência de leitura mais
+							rápida e fluida, especialmente em conexões lentas.</p>
+						<h3 id="16345bfd-2d22-81da-8b1e-f99cb8191ca5" class="">Principais Características do AMP</h3>
+						<ol type="1" id="16345bfd-2d22-81a7-9597-d2bd63fb2c96" class="numbered-list" start="1">
+							<li><strong>AMP HTML</strong>:<ul id="16345bfd-2d22-817f-acbf-c9a0af7b3530"
+									class="bulleted-list">
+									<li style="list-style-type:disc">É um subconjunto do HTML que tem algumas restrições
+										para garantir desempenho e compatibilidade. Por exemplo, ele tem regras
+										específicas sobre o uso de JavaScript e CSS.</li>
+								</ul>
+							</li>
+						</ol>
+						<ol type="1" id="16345bfd-2d22-81bc-aea5-ddeb3b5e928e" class="numbered-list" start="2">
+							<li><strong>Componentes AMP</strong>:<ul id="16345bfd-2d22-81b8-9c11-eeb9c0a38b08"
+									class="bulleted-list">
+									<li style="list-style-type:disc">O AMP fornece componentes específicos, como
+										<code>&lt;amp-img&gt;</code> para imagens e <code>&lt;amp-carousel&gt;</code>
+										para galerias de fotos, que são otimizados para carregar rapidamente.</li>
+								</ul>
+							</li>
+						</ol>
+						<ol type="1" id="16345bfd-2d22-8101-a504-d8897e9e0afd" class="numbered-list" start="3">
+							<li><strong>Cache do AMP</strong>:<ul id="16345bfd-2d22-812f-b881-c1440ff42f23"
+									class="bulleted-list">
+									<li style="list-style-type:disc">Quando uma página AMP é criada, o Google pode
+										armazená-la em cache. Isso significa que, quando um usuário acessa a página, ela
+										pode ser carregada diretamente do cache do Google, resultando em um carregamento
+										quase instantâneo.</li>
+								</ul>
+							</li>
+						</ol>
+						<ol type="1" id="16345bfd-2d22-8149-bd84-fa28e5b74aee" class="numbered-list" start="4">
+							<li><strong>Velocidade de Carregamento</strong>:<ul
+									id="16345bfd-2d22-81a5-9ac8-e227b99bc672" class="bulleted-list">
+									<li style="list-style-type:disc">As páginas AMP são projetadas para serem carregadas
+										rapidamente, minimizando o tempo de espera e melhorando a experiência do
+										usuário, especialmente em dispositivos móveis.</li>
+								</ul>
+							</li>
+						</ol>
+						<h3 id="16345bfd-2d22-81a6-9027-d1a865530961" class="">Vantagens do AMP</h3>
+						<ul id="16345bfd-2d22-8196-af09-cf31f9f6d3df" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Melhor Performance</strong>: Carregamentos mais
+								rápidos reduzem a taxa de rejeição e aumentam o engajamento do usuário.</li>
+						</ul>
+						<ul id="16345bfd-2d22-81ec-85ee-cebcb62f68fc" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>SEO Favorável</strong>: O Google prioriza páginas
+								AMP em resultados de busca, especialmente em pesquisas móveis, o que pode aumentar a
+								visibilidade.</li>
+						</ul>
+						<ul id="16345bfd-2d22-81a9-8476-e8577b7fc4a6" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Experiência do Usuário</strong>: As páginas AMP
+								oferecem uma experiência de leitura mais suave, o que é essencial para manter os
+								visitantes.</li>
+						</ul>
+						<h3 id="16345bfd-2d22-8105-a4df-ed3577f932a1" class="">Desvantagens do AMP</h3>
+						<ul id="16345bfd-2d22-814f-8247-e840639ec4b5" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Limitações de Funcionalidade</strong>: Algumas
+								restrições podem limitar a personalização e a interatividade em comparação com páginas
+								web tradicionais.</li>
+						</ul>
+						<ul id="16345bfd-2d22-81b6-ab36-f47e0c24124d" class="bulleted-list">
+							<li style="list-style-type:disc"><strong>Dependência do Google</strong>: A implementação do
+								AMP pode criar uma dependência do ecossistema do Google para cache e distribuição.</li>
+						</ul>
+						<h3 id="16345bfd-2d22-8147-9e8d-dc77939754bd" class="">Conclusão</h3>
+						<p id="16345bfd-2d22-81e8-ad7f-e9de7beeb965" class="">AMP é uma solução eficaz para sites que
+							buscam melhorar a experiência do usuário em dispositivos móveis. Ele é especialmente útil
+							para publicadores de conteúdo, como blogs e sites de notícias, que precisam garantir que
+							suas páginas sejam rápidas e acessíveis em diversas condições de internet.</p>
+					</details>
+				</li>
+			</ul>
+			<ul id="16345bfd-2d22-814d-b40d-ef8a4b13423a" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong><a href="https://emojiterra.com/pt/luz-giratoria/">🚨</a></strong><strong>
+								Blackhat</strong></summary>
+						<p id="16345bfd-2d22-815e-b44b-e696e7e348ea" class="">Blackhat SEO refere-se a práticas de
+							otimização de motores de busca que violam as diretrizes dos buscadores, como o Google, em
+							busca de aumentar rapidamente a visibilidade de um site. Essas técnicas podem levar a
+							penalizações, como a desindexação do site nos resultados de busca, o que pode ser
+							extremamente prejudicial a longo prazo. Algumas práticas comuns de blackhat SEO incluem:</p>
+						<ol type="1" id="16345bfd-2d22-8133-a3ee-d14b92c5ff4a" class="numbered-list" start="1">
+							<li><strong>Keyword Stuffing</strong>: Repetir excessivamente palavras-chave em um conteúdo,
+								tornando-o pouco natural e de baixa qualidade.</li>
+						</ol>
+						<ol type="1" id="16345bfd-2d22-810e-8dd9-f32d26503ab4" class="numbered-list" start="2">
+							<li><strong>Cloaking</strong>: Mostrar um conteúdo diferente para os motores de busca e para
+								os usuários. Por exemplo, exibir uma página otimizada para SEO para o Google, enquanto
+								os visitantes veem uma página diferente.</li>
+						</ol>
+						<ol type="1" id="16345bfd-2d22-8128-b8aa-e7057e741d40" class="numbered-list" start="3">
+							<li><strong>Link Farming</strong>: Criar redes de sites interconectados que se linkam entre
+								si para manipular a relevância e a autoridade de um site.</li>
+						</ol>
+						<ol type="1" id="16345bfd-2d22-816b-9cb2-ff22b3681675" class="numbered-list" start="4">
+							<li><strong>Conteúdo Duplicado</strong>: Copiar conteúdo de outros sites em vez de criar
+								conteúdo original, o que pode enganar os motores de busca.</li>
+						</ol>
+						<ol type="1" id="16345bfd-2d22-81c0-9fd8-c92564c83efb" class="numbered-list" start="5">
+							<li><strong>Manipulação de Meta Tags</strong>: Usar meta tags enganosas ou irrelevantes para
+								atrair cliques, sem relação com o conteúdo real da página.</li>
+						</ol>
+						<p id="16345bfd-2d22-8110-8959-e541b1e7e94f" class="">Embora essas táticas possam resultar em
+							ganhos rápidos de tráfego, a longo prazo, elas são arriscadas e podem resultar em
+							penalizações severas, prejudicando a reputação do site e sua visibilidade nos motores de
+							busca.</p>
+					</details>
+				</li>
+			</ul>
+			<ul id="16345bfd-2d22-8118-afc4-e16c495871d8" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>Projetos de SEO (CHECKLIST)</strong></summary>
+						<p id="16345bfd-2d22-812c-84be-ce099ef16a6e" class="">Diagnostico de SEO</p>
+						<ul id="16345bfd-2d22-81b6-8390-f85e26aff138" class="bulleted-list">
+							<li style="list-style-type:disc">Conheça o negocio e o site</li>
+						</ul>
+						<ul id="16345bfd-2d22-81cb-8b82-c0e143abe158" class="bulleted-list">
+							<li style="list-style-type:disc">Colete dados do Google Analytics, searh console, cms, etc
+							</li>
+						</ul>
+						<ul id="16345bfd-2d22-81bb-b54f-dfcd569b0c8f" class="bulleted-list">
+							<li style="list-style-type:disc">Analise o cenario atual, concorrentes, tecnicas, onpage,
+								offpage, ux e acessibilidade</li>
+						</ul>
+						<ul id="16345bfd-2d22-8189-978e-dcc1070fc937" class="bulleted-list">
+							<li style="list-style-type:disc">Defina metas e faça as projeções de SEO</li>
+						</ul>
+						<ul id="16345bfd-2d22-8139-a143-c22d9d0b57b1" class="bulleted-list">
+							<li style="list-style-type:disc">Confecione o planejamento estrategico e tatico</li>
+						</ul>
+						<ul id="16345bfd-2d22-816f-8449-cd388bdcc090" class="bulleted-list">
+							<li style="list-style-type:disc">Crie o relatorio da auditoria de seo</li>
+						</ul>
+						<ul id="16345bfd-2d22-8114-b8a3-c58698382349" class="bulleted-list">
+							<li style="list-style-type:disc">Acompanhe e mensure os dados diariamente, semanalmente,
+								semanalmente</li>
+						</ul>
+					</details>
+				</li>
+			</ul>
+			</p>
+		</div>
+	</article><span class="sans" style="font-size:14px;padding-top:2em"></span>
+</body>
+
+</html>
